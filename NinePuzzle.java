@@ -10,15 +10,16 @@ import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MoveAction;
 public class NinePuzzle 
 {	
 	public static void main(String[] args)
-	{	
-		Scanner input = new Scanner(Paths.get("begin_waardes.txt"));//lees uit text leer
+	{	//Scanner input = new Scanner(Paths.get("begin_waardes.txt"));
+		Scanner input = new Scanner(System.in);//lees uit text leer
 		Scanner gebruiker = new Scanner(System.in);//gebruiker se skuiwe
 		
 		boolean solved = false;
-		int size = input.nextInt();
-		int[] current =new int[9];
 		
-		for(int i = 0; i< 9;i++)
+	//	int size = input.nextInt();
+		int[] current = new int[9];
+		
+		for(int i = 0; i < 9;i++)
 		{
 			current[i] = input.nextInt();
 		}
