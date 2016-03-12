@@ -1,11 +1,11 @@
 import java.util.Scanner;
 import java.util.Arrays;
 import java.io.IOException;
-import java.lang.IllegalStateException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.Path;
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MoveAction;
+//import java.lang.IllegalStateException;
+//import java.nio.file.Files;
+//import java.nio.file.Paths;
+//import java.nio.file.Path;
+//import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MoveAction;
 
 public class NinePuzzle 
 {	
@@ -15,37 +15,44 @@ public class NinePuzzle
 		Scanner gebruiker = new Scanner(System.in);//gebruiker se skuiwe
 		
 		boolean solved = false;
-		
+		int count =0;
 	//	int size = input.nextInt();
-		int[] current = new int[9];
+		//int[] current = new int[9];
 		
-		for(int i = 0; i < 9;i++)
+		
+		/*for(int i = 0; i < 9;i++)
 		{
+			//current[i] = i;
 			current[i] = input.nextInt();
+			//puzzle(current);
 		}
-		/* int[] current = {0,1,2,
+		//for(int j = );
+		input.close();*/
+		 int[] current = {0,1,2,
                           3,4,5,
-                          6,7,8};*/
+                          6,7,8};
 
 		
 		 int [] finaal = {1,0,2,
 				 		  3,4,5,
-				 		  6,7,8};	
-		 
-		int lees =0 ;
+				 		  6,7,8};			
 		while(!solved) {
 		  puzzle(current);
-			
+			int lees = 0;;
 		  System.out.println("wat is u volgende skuif");
-		  lees = gebruiker.nextInt();
+		    lees = gebruiker.nextInt();
+		   // if(lees == 0)
+		    	//stoor na txt file as begin waardes
 		  move_index(lees, current);
-	
+		  count++;
 	
           solved=compare_solution(finaal, current);
 			
-	      System.out.println(compare_solution(finaal, current));
+	    //  System.out.println(compare_solution(finaal, current));
 			
-		}//end while		
+		}//end while	
+		System.out.println("Geluk jy het die puzzle gesolve");
+		System.out.println("jy het"+ " "+count +" "+ "skuiwe gemaak om die puzzle klaar te maak");
 	}//end main
 	
 	//print puzzle
