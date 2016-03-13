@@ -1,6 +1,9 @@
 import java.util.Scanner;
 import java.util.Arrays;
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 //import java.lang.IllegalStateException;
 //import java.nio.file.Files;
@@ -95,6 +98,49 @@ public class NinePuzzle
 	}//end main
 	
 	
+	
+//read csv file into an array
+	public static void setUpArray() throws FileNotFoundException
+	{
+		String filename = "eindwaardes.csv";
+		File File = new File(filename);
+		try
+		{
+			Scanner	inputStream = new Scanner(File);
+			while(inputStream.hasNext())
+			{
+				String data = inputStream.next();//gets a whole line
+				String [] values = data.split(",");
+				System.out.println(data);	
+			}	
+			inputStream.close();
+		}catch(FileNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		
+	}
+			/*
+			  try
+			 {
+			 while(scanIn.hasNextLine())
+			{
+				String InputLine = scanIn.nextLine();//read data from csv file
+				String [] inarray = InputLine.split(",");//read data into an array
+				String [] outarray = InputLine.split(",");
+				
+				for(int g = 0; g < 9;g++)
+				{
+					inarray[g] = 
+				}
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}*/
+		
+	//end setuparray
 	//print puzzle
 	public static int puzzle(int [] current)
 	{
