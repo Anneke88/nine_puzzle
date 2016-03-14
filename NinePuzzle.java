@@ -12,105 +12,93 @@ import java.io.IOException;
 //import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MoveAction;
 import java.io.PrintWriter;
 
-public class NinePuzzle 
-{	
-	public static void main(String[] args)
-	{	//Scanner input = new Scanner(Paths.get("begin_waardes.txt"));
-		Scanner input = new Scanner(System.in);//lees uit text leer
-		Scanner gebruiker = new Scanner(System.in);//gebruiker se skuiwe
-		
-		boolean solved = false;
-		int count =0;
+public class NinePuzzle {	
+  public static void main(String[] args) throws FileNotFoundException {	
+    //Scanner input = new Scanner(Paths.get("begin_waardes.txt"));
+    Scanner input = new Scanner(args[0]);//lees uit text leer
+    Scanner gebruiker = new Scanner(System.in);//gebruiker se skuiwe
+	
+    boolean solved = false;
+    int count = 0;
 	
 		int[] current = new int[9];
 		int[] finaal = new int[9];
 		
-		for(int i = 0; i < 9;i++)
-		{
-			//current[i] = i;
-			current[i] = input.nextInt();
-			//puzzle(current);
-		}
-		for(int j = 0; j < 9;j++)
-		{
-			finaal[j] = input.nextInt();
-		}
-		for(int m = 0 ;m < 2;m++)
-		{
-			count = input.nextInt();
-		}
+		setUpArray(current, finaal, input.nextLine());
 		
-		input.close();
-		/* int[] current = {0,1,2,
-                          3,4,5,
-                          6,7,8};
-
-		
-		 int [] finaal = {1,0,2,
-				 		  3,4,5,
-				 		  6,7,8};	*/	
-		
-		//System.out.println("current" +puzzle(current));
-		//System.out.println("finaal" +puzzle(finaal));
-		while(!solved) {
-		  puzzle(current);
-			int lees ;
+	    while(!solved) {
+		  puzzle(current); // print current puzzle
+		  int lees = 0;
 		  System.out.println("wat is u volgende skuif");
-		    lees = gebruiker.nextInt(); //probleem
-		    if(lees != 0)
-		    {
-		    	move_index(lees, current);
-		    	count++;
-		    	solved=compare_solution(finaal, current);
-		    }
-		    else
-		    {
-		    	 //stoor na txt file as begin waardes
-		    	String filename = "begin_waardes.txt"; // wat is the file name's name 
-		    	try {
-					PrintWriter outputStream = new PrintWriter(filename);
-					
-					for(int k = 0;k < 9;k++)
-					{
-						outputStream.println(current[k]); //print write the current puzzle
-					}
-					for(int h = 0; h < 9;h++ )
-					{
-						outputStream.println(finaal[h]);	//write the final puzzle
-					}
-					for(int n = 0 ; n < 2; n++)
-					{
-						outputStream.println(count); //write how many moves are made
-					}
-					outputStream.close();
-					System.out.println("your puzzle has been stored");
-		    	} //end try
-		    	catch (FileNotFoundException e) {
-					e.printStackTrace();
-				}//end catch
-		    	solved = true;
+		  lees = gebruiker.nextInt(); //probleem
+		  if(lees != 0) {
+		    move_index(lees, current);
+		    count++;
+		    solved=compare_solution(finaal, current);
+		  } else {
+		    //stoor na txt file as begin waardes
+		    String filename = "begin_waardes.txt"; // wat is the file name's name 
+		    try {
+			  PrintWriter outputStream = new PrintWriter(filename);
+			  for ( int k = 0; k < 9; k++ ) {
+				if ( k != 8 ) {
+			      outputStream.print(current[k] + ","); //print write the current puzzle
+				} else {
+				  outputStream.print(current[k] + "\n");
+				}
+			  }
+			  for(int h = 0; h < 9; h++ ) {
+				if ( h != 8 ) {
+			      outputStream.print(finaal[h] + ","); //print write the current puzzle
+				} else {
+				  outputStream.print(finaal[h] + "\n");
+				}			  
+			  }
+			  outputStream.println(count); //write how many moves are made
+			  outputStream.close();
+			  System.out.println("your puzzle has been stored");
+		    } //end try
+		    catch (FileNotFoundException e) {
+			  e.printStackTrace();
+			}//end catch
+		    solved = true;
 		    }//end if
 		
 	    //  System.out.println(compare_solution(finaal, current));		
 		}//end while	
 		System.out.println("Geluk jy het die puzzle gesolve");
-		System.out.println("jy het"+ " "+count +" "+ "skuiwe gemaak om die puzzle klaar te maak");
+		System.out.println("jy het" + " " + count + " " + "skuiwe gemaak om die puzzle klaar te maak");
 	}//end main
 	
 	
 	
 //read csv file into an array
-	public static void setUpArray() throws FileNotFoundException
-	{
-		String filename = "eindwaardes.csv";
-		File File = new File(filename);
+	public static void setUpArray(int [] current, int [] finaal, String filename) throws FileNotFoundException {
+		File File = new File(filename);	
 		try
 		{
 			Scanner	inputStream = new Scanner(File);
+			int lines_read = 0;
+			
 			while(inputStream.hasNext())
 			{
 				String data = inputStream.next();//gets a whole line
 				String [] values = data.split(",");
+				if(lines_read == 0)
+				{
+					for(int b = 0; b < 9;b++)
+					{
+						current[b] = Integer.parseInt(values[b]);
+					}
+				}
+				else if(lines_read==1)
+				{
+					for(int b = 0; b < 9;b++)
+					{
+						finaal[b] = Integer.parseInt(values[b]);
+					}
+				}
+				lines_read++;
 				System.out.println(data);	
 			}	
 			inputStream.close();
