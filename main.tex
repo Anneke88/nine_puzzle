@@ -1,4 +1,51 @@
+\documentclass[10pt]{article}
+\usepackage[final]{pdfpages}
+\usepackage{cleveref}
+\usepackage{xparse}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[section]{placeins}
+\usepackage{listings}
+\usepackage{verbatim}
+
+\usepackage{sectsty}
+\sectionfont{\rmfamily\mdseries\Large}
+\subsectionfont{\rmfamily\mdseries\itshape\large}
+
+
+\geometry{
+  %body={6.5in, 8.5in},
+  left=2.5cm,
+  right=2cm,
+  top=2cm,
+  bottom=2cm
+}
+
+\linespread{1.213}
+\begin{document}
+\section*{Introduction}
+
+\section*{Background}
+
+\section*{History}
+
+\section*{Literature Study}
+
+\section*{User Guide}
+How to begin the nine-puzzle:
+Step 1
+\section*{Bibliography}
+
+\section*{Code}
+ \begin{tiny}
+  \begin{verbatim}
 import java.util.Scanner;
+import java.util.Arrays;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -8,57 +55,39 @@ import javax.swing.JOptionPane;
 
 public class NinePuzzle {	
   public static void main(String[] args) throws FileNotFoundException {
-	//scanner to read out of txt file
+	//lees uit text leer
     Scanner input = new Scanner(args[0]);
-	//gebruiker se skuiwe
-    Scanner gebruiker = new Scanner(System.in);
+    Scanner gebruiker = new Scanner(System.in);//gebruiker se skuiwe
     boolean solved = false;
     int count = 0;
-	//create arrays
 	int[] current = new int[9];
 	int[] finaal = new int[9];
-	//array for the string read in csv file
 	String[] userInputs = new String[1];
 	String filename = input.nextLine();
-	//call method that reads the csv file
-	setUpArray(current, finaal, userInputs, filename);	
-	//display how the game is played
-	String message = "How to play: \n Type in the number that you want to \n move to the blank space (B).  If you \n want to exit the game type '0' then the \n program will store your current nine-puzzle \n and you can continue at another time";
+	setUpArray(current, finaal, userInputs, filename);
+		
+	String message = "Hallo ruan";
 	JOptionPane.showMessageDialog(null,message);
-	//while loop to see if the user has finished playing
     while ( !solved ) {
 	  puzzle(current); // print current puzzle
 	  int lees = 0;
-	  //ask user what his next move is going to be
 	  System.out.println("wat is u volgende skuif");
-      lees = gebruiker.nextInt();
-	  //test if the input from user is 0 or any other number between 1 - 8
+      lees = gebruiker.nextInt(); //probleem
       if ( lees != 0 ) {
-		//move the index of the tiles
         move_index(lees, current);
         count++;
 		solved = compare_solution(finaal, current);
 		userInputs[0] += Integer.toString(lees) + ",";
-	  //if the user enters 0
       } else {
-	    //write current puzzle to csv file
         writeArrayToFile(current, finaal, userInputs[0], filename);
         //stoor na txt file as begin waardes
 	    solved = true;
       }//end if
-      //show the final puzzle to the user	  
-	 /* if(lees == 99)
-	  {
-		  String message3 = Integer.parseString(puzzle(finaal));
-		  JOptionPane.showMessageDialog(null,message3);
-	  }*/
+	  //  System.out.println(compare_solution(finaal, current));		
 	}//end while	
-    //show message that say he has solved  the puzzle
-	String message1 = "Congradulations you have solved the puzzle in   moves";
-	JOptionPane.showMessageDialog(null,message1);
+    System.out.println("Geluk jy het die ` gesolve");
     System.out.println("jy het" + " " + count + " " 
-  	+ "skuiwe gemaak om die puzzle klaar te maak");
-
+	+ "skuiwe gemaak om die puzzle klaar te maak");
 }//end main
 	
 public static void writeArrayToFile(int [] current,
@@ -71,25 +100,17 @@ public static void writeArrayToFile(int [] current,
     PrintWriter outputStream = new PrintWriter(filename);
 	for ( int k = 0; k < 9; k++ ) {
 	  if ( k != 8 ) {
-		// write the current puzzle to file
-		if(outputStream.print(current[k]) == 0){
-		  outputStream.print(current[k]) = b;
-	  } else {	
-	      outputStream.print(current[k] + ","); 
-		}
+		//print write the current puzzle
+	    outputStream.print(current[k] + ","); 
 	  } else {
-	      outputStream.print(current[k] + "\r\n");
+	    outputStream.print(current[k] + "\r\n");
 	  }
 	}
 	for(int h = 0; h < 9; h++ ) {
 	  if ( h != 8 ) {
-		//write the finale puzzle to file
-	    if(outputStream.print(current[h]) == 0){
-		  outputStream.print(current[h]) = b;
-	  } else {		
-	      outputStream.print(finaal[h] + ","); 
+	    outputStream.print(finaal[h] + ","); //print write the current puzzle
 	  } else {
-	      outputStream.print(finaal[h] + "\r\n");
+	    outputStream.print(finaal[h] + "\r\n");
 	  }			  
 	}
 	if ( userinputs.length() > 0 ) {
@@ -98,9 +119,7 @@ public static void writeArrayToFile(int [] current,
       outputStream.println(user_inputs);
 	}
 	outputStream.close();
-	String message2 = "Your puzzle has been saved";
-	JOptionPane.showMessageDialog(null,message2);
-	
+	System.out.println("your puzzle has been stored");
     //end try
   } catch (FileNotFoundException e) {
     e.printStackTrace();
@@ -118,16 +137,10 @@ public static void setUpArray(int [] current, int [] finaal, String [] userinput
 				String [] values = data.split(",");
 				if ( lines_read == 0 ) {
 				  for ( int b = 0; b < 9; b++ ) {
-					  if (values[b] == 0){
-						  current[b] = b;
-					  } else {
-				          current[b] = Integer.parseInt(values[b]);
-				      }
+				    current[b] = Integer.parseInt(values[b]);
+				  }
 				} else if ( lines_read == 1 ) {
 				  for ( int b = 0; b < 9; b++ ) {
-					  if (values[b] == 0){
-					    finaal[b] = b;
-					  } else {
 				    finaal[b] = Integer.parseInt(values[b]);
 				  }
 				} else if ( lines_read == 2 ) {
@@ -198,3 +211,6 @@ public static boolean compare_solution(int [] finaal, int [] current) {
   return true;
 }//end compare
 }//end class
+  \end{verbatim}
+   \end{tiny}
+\end{document}
