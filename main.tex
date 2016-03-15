@@ -11,8 +11,11 @@
 \usepackage[section]{placeins}
 \usepackage{listings}
 \usepackage{verbatim}
-
+\usepackage{harvard}
+\usepackage[dcucite,abbr]{harvard}
 \usepackage{sectsty}
+\usepackage{html}
+\usepackage{url}
 \sectionfont{\rmfamily\mdseries\Large}
 \subsectionfont{\rmfamily\mdseries\itshape\large}
 
@@ -27,6 +30,10 @@
 
 \linespread{1.213}
 \begin{document}
+\includepdf{./BossPuzzle.pdf}
+\newpage
+\index{}
+\newpage
 \section*{Introduction}
 
 \section*{Background}
@@ -124,7 +131,6 @@ If you want to view the finale puzzle you type in 99. Figure~\ref{prent7}
 \caption{}
 \label{prent7}
 \end{figure}
-\section*{Bibliography}
 
 \section*{Code}
  \begin{tiny}
@@ -350,4 +356,7 @@ public class NinePuzzle {
 }//end class
   \end{verbatim}
    \end{tiny}
+   \section*{Bibliography}
+\bibliographystyle{dcu}
+\bibliography{BIBTEXFILE}
 \end{document}
