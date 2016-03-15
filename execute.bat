@@ -1,2 +1,2 @@
 javac NinePuzzle.java
-java NinePuzzle begin_waardes.txt
+java NinePuzzle waardes_puzzle.csv
