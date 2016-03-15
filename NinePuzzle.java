@@ -73,7 +73,7 @@ public static void writeArrayToFile(int [] current,
 	  if ( k != 8 ) {
 		// write the current puzzle to file
 		if(outputStream.print(current[k]) == 0){
-		  outputStream.print(current[k]) = b;
+		 outputStream.print(current[k]) = b;
 	  } else {	
 	      outputStream.print(current[k] + ","); 
 		}
@@ -84,14 +84,15 @@ public static void writeArrayToFile(int [] current,
 	for(int h = 0; h < 9; h++ ) {
 	  if ( h != 8 ) {
 		//write the finale puzzle to file
-	    if(outputStream.print(current[h]) == 0){
-		  outputStream.print(current[h]) = b;
-	  } else {		
-	      outputStream.print(finaal[h] + ","); 
+	      if(finaal[h] == 0){
+		    outputStream.print(finaal[h]) = b;
+	      } else {
+	    outputStream.print(finaal[h] + ","); 
 	  } else {
-	      outputStream.print(finaal[h] + "\r\n");
-	  }			  
-	}
+	    outputStream.print(finaal[h] + "\r\n");
+	  }//end else
+	  }//end if		  
+	}//end for
 	if ( userinputs.length() > 0 ) {
 	  String user_inputs = userinputs.substring(0, userinputs.length() - 1) 
 	                       + "\r\n";
@@ -117,39 +118,50 @@ public static void setUpArray(int [] current, int [] finaal, String [] userinput
 				String data = inputStream.next();//gets a whole line
 				String [] values = data.split(",");
 				if ( lines_read == 0 ) {
-				  for ( int b = 0; b < 9; b++ ) {
-					  if (values[b] == 0){
-						  current[b] = b;
+				  for ( int v = 0; v < 9; v++ ) {
+					  if (values[v] == b){
+						  current[v] = 0;
+						  //end if
 					  } else {
-				          current[b] = Integer.parseInt(values[b]);
-				      }
+				          current[v] = Integer.parseInt(values[v]);
+				      }//end else
+					//end for  
 				} else if ( lines_read == 1 ) {
-				  for ( int b = 0; b < 9; b++ ) {
-					  if (values[b] == 0){
-					    finaal[b] = b;
+				  for ( int w = 0; w < 9; w++ ) {
+					  if (values[w] == b){
+					    finaal[w] = 0;
+						//end values[w] = b
 					  } else {
-				    finaal[b] = Integer.parseInt(values[b]);
-				  }
+				    finaal[w] = Integer.parseInt(values[w]);
+				  }//end else
+				  //end for
 				} else if ( lines_read == 2 ) {
 				  userinputs[0] = data + ",";
-				}
+				}//end if lines_read 2
 				lines_read++;	
-			}	
+			}	//end if lines_read =1
 			inputStream.close();
-		}catch(FileNotFoundException e)
+			//end if
+			}
+			}//end while
+		}//end try
+		catch(FileNotFoundException e)
 		{
 			e.printStackTrace();
 		}
-		
-	}		
-	//end setuparray
+			
+}//end setuparray
 	//print puzzle
 	public static int puzzle(int [] current) {
       for(int k = 0; k < 9; k++) {
         System.out.print(current[k] +" ");
+		if(current[k] == 0)
+			System.out.print("b");
+		else{
           if ( ((k+1)%3) == 0 ) {
            System.out.print("\n");
-		  }//end if
+		  }
+		}//end if
         }//end for
       return 0;
 	}//end puzzle
