@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.5)  15 MAR 2016 22:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.5)  16 MAR 2016 15:36
 entering extended mode
 **./main.tex
 (main.tex
@@ -523,28 +523,23 @@ Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks23
 \verbatim@line=\toks24
 \verbatim@in@stream=\read1
-)
-("C:\Users\Anneke\AppData\Local\Programs\MiKTeX 2.9\tex\latex\sectsty\sectsty.s
-ty"
-Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
-les
 ) (C:\Users\Anneke\Desktop\nine_puzzle\build\main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
 \AtBeginShipoutBox=\box47
 
 ("C:\Users\Anneke\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.m
@@ -572,7 +567,7 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 80.
 )
-Package hyperref Info: Link coloring OFF on input line 29.
+Package hyperref Info: Link coloring OFF on input line 31.
 
 ("C:\Users\Anneke\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.
 sty"
@@ -584,9 +579,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count162
 )
-LaTeX Info: Redefining \ref on input line 29.
-LaTeX Info: Redefining \pageref on input line 29.
-LaTeX Info: Redefining \nameref on input line 29.
+LaTeX Info: Redefining \ref on input line 31.
+LaTeX Info: Redefining \pageref on input line 31.
+LaTeX Info: Redefining \nameref on input line 31.
  (C:\Users\Anneke\Desktop\nine_puzzle\build\main.out)
 (C:\Users\Anneke\Desktop\nine_puzzle\build\main.out)
 \@outlinefile=\write3
@@ -631,120 +626,188 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count163
-<./Prente/beginfile.png, id=4, 444.91219pt x 228.10219pt>
-File: ./Prente/beginfile.png Graphic file (type png)
+<./BossPuzzle.pdf, id=39, 614.295pt x 794.97pt>
+File: ./BossPuzzle.pdf Graphic file (type pdf)
+ <use ./BossPuzzle.pdf>
+Package pdftex.def Info: ./BossPuzzle.pdf used on input line 32.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: ./BossPuzzle.pdf Graphic file (type pdf)
 
-<use ./Prente/beginfile.png>
-Package pdftex.def Info: ./Prente/beginfile.png used on input line 45.
-(pdftex.def)             Requested size: 222.45554pt x 114.0508pt.
+<use ./BossPuzzle.pdf>
+Package pdftex.def Info: ./BossPuzzle.pdf used on input line 32.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+ <./BossPuzzle.pdf, id=42, page=1, 614.295pt x 794.97pt>
+File: ./BossPuzzle.pdf Graphic file (type pdf)
 
-<./Prente/begincmd.png, id=5, 321.45094pt x 79.79813pt>
+<use ./BossPuzzle.pdf, page 1>
+Package pdftex.def Info: ./BossPuzzle.pdf, page1 used on input line 32.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: ./BossPuzzle.pdf Graphic file (type pdf)
+ <use ./BossPuzzle.pdf, page 1>
+Package pdftex.def Info: ./BossPuzzle.pdf, page1 used on input line 32.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: ./BossPuzzle.pdf Graphic file (type pdf)
+
+<use ./BossPuzzle.pdf, page 1>
+Package pdftex.def Info: ./BossPuzzle.pdf, page1 used on input line 32.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: ./BossPuzzle.pdf Graphic file (type pdf)
+ <use ./BossPuzzle.pdf, page 1>
+Package pdftex.def Info: ./BossPuzzle.pdf, page1 used on input line 32.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: ./BossPuzzle.pdf Graphic file (type pdf)
+
+<use ./BossPuzzle.pdf, page 1>
+Package pdftex.def Info: ./BossPuzzle.pdf, page1 used on input line 32.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [1
+
+ <./BossPuzzle.pdf>] [2{C:/Users/Anneke/AppData/Local/MiKTeX/2.9/pdftex/config/
+pdftex.map}]
+<./Prente/csv.png, id=62, 447.92343pt x 55.70813pt>
+File: ./Prente/csv.png Graphic file (type png)
+ <use ./Prente/csv.png>
+Package pdftex.def Info: ./Prente/csv.png used on input line 50.
+(pdftex.def)             Requested size: 313.54427pt x 38.9954pt.
+
+<./Prente/waardes.png, id=63, 132.495pt x 37.64063pt>
+File: ./Prente/waardes.png Graphic file (type png)
+
+<use ./Prente/waardes.png>
+Package pdftex.def Info: ./Prente/waardes.png used on input line 56.
+(pdftex.def)             Requested size: 132.49466pt x 37.64052pt.
+
+<./Prente/begincmd.png, id=65, 321.45094pt x 79.79813pt>
 File: ./Prente/begincmd.png Graphic file (type png)
 
 <use ./Prente/begincmd.png>
-Package pdftex.def Info: ./Prente/begincmd.png used on input line 54.
+Package pdftex.def Info: ./Prente/begincmd.png used on input line 69.
 (pdftex.def)             Requested size: 257.16109pt x 63.83856pt.
 
-Overfull \hbox (14.03229pt too wide) in paragraph at lines 54--55
+Overfull \hbox (14.03229pt too wide) in paragraph at lines 69--70
  [][] 
  []
 
-<./Prente/MessageBegin.png, id=7, 239.39438pt x 175.40532pt>
+<./Prente/MessageBegin.png, id=67, 239.39438pt x 175.40532pt>
 File: ./Prente/MessageBegin.png Graphic file (type png)
 
 <use ./Prente/MessageBegin.png>
-Package pdftex.def Info: ./Prente/MessageBegin.png used on input line 61.
+Package pdftex.def Info: ./Prente/MessageBegin.png used on input line 76.
 (pdftex.def)             Requested size: 191.51575pt x 140.32443pt.
 
-<./Prente/prent1.png, id=10, 331.99031pt x 79.79813pt>
+<./Prente/prent1.png, id=70, 331.99031pt x 79.79813pt>
 File: ./Prente/prent1.png Graphic file (type png)
 
 <use ./Prente/prent1.png>
-Package pdftex.def Info: ./Prente/prent1.png used on input line 71.
+Package pdftex.def Info: ./Prente/prent1.png used on input line 86.
 (pdftex.def)             Requested size: 265.59259pt x 63.83856pt.
 
-<./Prente/prent2.png, id=11, 323.70938pt x 130.23656pt>
+<./Prente/prent2.png, id=71, 323.70938pt x 130.23656pt>
 File: ./Prente/prent2.png Graphic file (type png)
 
 <use ./Prente/prent2.png>
-Package pdftex.def Info: ./Prente/prent2.png used on input line 78.
+Package pdftex.def Info: ./Prente/prent2.png used on input line 93.
 (pdftex.def)             Requested size: 258.96785pt x 104.18938pt.
 
-<./Prente/prent3.png, id=13, 336.50719pt x 182.93344pt>
+<./Prente/prent3.png, id=73, 336.50719pt x 182.93344pt>
 File: ./Prente/prent3.png Graphic file (type png)
 
 <use ./Prente/prent3.png>
-Package pdftex.def Info: ./Prente/prent3.png used on input line 86.
+Package pdftex.def Info: ./Prente/prent3.png used on input line 101.
 (pdftex.def)             Requested size: 269.2061pt x 146.34694pt.
- [1
 
-{C:/Users/Anneke/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Prente/b
-eginfile.png> <./Prente/begincmd.png> <./Prente/MessageBegin.png>] <./Prente/pr
-ent4.png, id=34, 325.96782pt x 191.9672pt>
+<./Prente/prent4.png, id=76, 325.96782pt x 191.9672pt>
 File: ./Prente/prent4.png Graphic file (type png)
 
 <use ./Prente/prent4.png>
-Package pdftex.def Info: ./Prente/prent4.png used on input line 98.
+Package pdftex.def Info: ./Prente/prent4.png used on input line 113.
 (pdftex.def)             Requested size: 260.7746pt x 153.57396pt.
 
-Overfull \hbox (17.6458pt too wide) in paragraph at lines 98--99
+Overfull \hbox (17.6458pt too wide) in paragraph at lines 113--114
  [][] 
  []
 
-<./Prente/prent5.png, id=35, 197.98969pt x 87.32625pt>
+<./Prente/prent5.png, id=77, 197.98969pt x 87.32625pt>
 File: ./Prente/prent5.png Graphic file (type png)
 
 <use ./Prente/prent5.png>
-Package pdftex.def Info: ./Prente/prent5.png used on input line 105.
+Package pdftex.def Info: ./Prente/prent5.png used on input line 120.
 (pdftex.def)             Requested size: 158.39195pt x 69.86108pt.
 
-<./Prente/prent6.png, id=37, 277.78781pt x 88.83188pt>
+<./Prente/prent6.png, id=79, 284.56313pt x 88.83188pt>
 File: ./Prente/prent6.png Graphic file (type png)
 
 <use ./Prente/prent6.png>
-Package pdftex.def Info: ./Prente/prent6.png used on input line 115.
-(pdftex.def)             Requested size: 222.23053pt x 71.06558pt.
+Package pdftex.def Info: ./Prente/prent6.png used on input line 130.
+(pdftex.def)             Requested size: 227.6508pt x 71.06558pt.
 
-<./Prente/prent7.png, id=39, 279.29344pt x 243.91125pt>
+<./Prente/prent7.png, id=81, 279.29344pt x 243.91125pt>
 File: ./Prente/prent7.png Graphic file (type png)
 
 <use ./Prente/prent7.png>
-Package pdftex.def Info: ./Prente/prent7.png used on input line 123.
+Package pdftex.def Info: ./Prente/prent7.png used on input line 138.
 (pdftex.def)             Requested size: 223.43504pt x 195.12926pt.
- [2 <./Prente/prent1.png> <./Prente/prent2.png> <./Prente/prent3.png>] [3 <./Pr
-ente/prent4.png> <./Prente/prent5.png> <./Prente/prent6.png> <./Prente/prent7.p
-ng>] [4
+ [3 <./Prente/csv.png>] [4 <./Prente/waardes.png> <./Prente/begincmd.png> <./Pr
+ente/MessageBegin.png> <./Prente/prent1.png> <./Prente/prent2.png>] [5 <./Prent
+e/prent3.png> <./Prente/prent4.png> <./Prente/prent5.png> <./Prente/prent6.png>
+] [6 <./Prente/prent7.png>]
+("C:\Users\Anneke\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstlang1
+.sty"
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 145.
+ (NinePuzzle.java
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 9.
 
-] [5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 353.
- [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 353.
+("C:\Users\Anneke\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <5> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
 
-(C:\Users\Anneke\Desktop\nine_puzzle\build\main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 353.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 353.
+[7
+
+]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 93.
+ ("C:\Users\Anneke\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <5> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 93.
+ [8])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 149.
+ [9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 149.
+ (C:\Users\Anneke\Desktop\nine_puzzle\build\main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 149.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 149.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 353.
+(rerunfilecheck)             Checksum: 0487D1819D7A334F6D55C539CB7FAD11;506.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 149.
  ) 
 Here is how much of TeX's memory you used:
- 17896 strings out of 493634
- 319130 string characters out of 3134832
- 406941 words of memory out of 3000000
- 21135 multiletter control sequences out of 15000+200000
- 5664 words of font info for 21 fonts, out of 3000000 for 9000
+ 18275 strings out of 493634
+ 324647 string characters out of 3134832
+ 460229 words of memory out of 3000000
+ 21273 multiletter control sequences out of 15000+200000
+ 6261 words of font info for 23 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 37i,10n,40p,10378b,504s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 37i,18n,43p,10378b,1783s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Anneke/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmr10.pfb><C:/Users/Anneke/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmr12.pfb><C:/Users/Anneke/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Anneke/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Anneke/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on C:/Users/Anneke/Desktop/nine_puzzle/build/main.pdf (6 pages, 
-144835 bytes).
+s/cm/cmbx12.pfb><C:/Users/Anneke/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmbx5.pfb><C:/Users/Anneke/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Anneke/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Anneke/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/An
+neke/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb>
+<C:/Users/Anneke/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmsy5.pfb><C:/Users/Anneke/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmti7.pfb>
+Output written on C:/Users/Anneke/Desktop/nine_puzzle/build/main.pdf (9 pages, 
+323480 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
- 24 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 431 PDF objects out of 1000 (max. 8388607)
+ 251 named destinations out of 1000 (max. 500000)
+ 148 words of extra memory for PDF output out of 10000 (max. 10000000)
 
