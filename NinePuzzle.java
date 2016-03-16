@@ -56,11 +56,12 @@ public class NinePuzzle {
           System.out.println("");
           } else {
           // move the index of the tiles
-          move_index(lees, current);
-          count++;
-          solved = compare_solution(finaal, current);
-          userInputs[0] += Integer.toString(lees) + ",";
-		  writeArrayToFile(current,finaal,userInputs[0],filename);
+            if (move_index(lees, current)) {
+              count++;
+              solved = compare_solution(finaal, current);
+              userInputs[0] += Integer.toString(lees) + ",";
+		      writeArrayToFile(current,finaal,userInputs[0],filename);
+		    }
           }  
       } else { //if the user enters 0
         //write current puzzle to csv file
@@ -75,8 +76,6 @@ public class NinePuzzle {
 		count = count-1;
       String message1 ="Congradulations you have solved the puzzle in" +" "+count +" "+ "moves";
       JOptionPane.showMessageDialog(null, message1);
-      System.out.println("jy het" + " " + count + " " 
-      + "skuiwe gemaak om die puzzle klaar te maak");
     }
 	if(save){
 	  String message2 = "Your puzzle has been saved";
@@ -124,7 +123,9 @@ public class NinePuzzle {
     }//end catch
   }
   //read csv file into an array
-  public static void setUpArray(int [] current, int [] finaal, String [] userinputs, String filename) throws FileNotFoundException {
+  public static void setUpArray(int [] current, int [] finaal, 
+                                String [] userinputs, String filename) 
+								throws FileNotFoundException {
     File File = new File(filename);  
     try {
       Scanner inputStream = new Scanner(File);
