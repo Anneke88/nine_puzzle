@@ -1,0 +1,13 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{Archer}{1999}{archer1999modern}
+Archer, A.~F.  \harvardyearleft 1999\harvardyearright .
+\newblock A modern treatment of the 15 puzzle, {\em The American mathematical
+  monthly} {\bf 106}(9):~793--799.
+
+\harvarditem{Reinefeld}{1993}{reinefeld1993complete}
+Reinefeld, A.  \harvardyearleft 1993\harvardyearright .
+\newblock Complete solution of the eight-puzzle and the benefit of
+  node-ordering in ida*, pp.~248--253.
+
+\end{thebibliography}

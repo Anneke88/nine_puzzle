@@ -2,7 +2,7 @@
 \usepackage[final]{pdfpages}
 \usepackage{cleveref}
 \usepackage{xparse}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{geometry}
 \usepackage{amsmath}
 \usepackage{graphicx}
@@ -11,40 +11,43 @@
 \usepackage[section]{placeins}
 \usepackage{listings}
 \usepackage{verbatim}
-%\usepackage{harvard}
 \usepackage[dcucite,abbr]{harvard}
 \usepackage{sectsty}
 \usepackage{html}
 \usepackage{url}
-\sectionfont{\rmfamily\mdseries\Large}
-\subsectionfont{\rmfamily\mdseries\itshape\large}
+\usepackage[section]{placeins}
 
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \geometry{
-  %body={6.5in, 8.5in},
-  left=2.5cm,
-  right=2cm,
-  top=2cm,
-  bottom=2cm
+ %body={6.5in, 8.5in},
+ left=2.5cm,
+ right=2cm,
+ top=2cm,
+ bottom=2cm
 }
 
 \linespread{1.213}
+\makeindex
 \begin{document}
 \includepdf{./BossPuzzle.pdf}
-\newpage
-index
-\newpage
+\tableofcontents
+\pagebreak
 \section{Introduction}
-This report is about the Nine-Puzzle.  The document will give a little bit of background information and also where did the nine puzzle has started.  This report will also include how to play the game. A step by step guide is included that tell you how to set up the puzzle and how to run the Nine-puzzle game that is included in the folder.  We want to optimize the moves so that the puzzle can be solved in the fewest moves.
-
+\subsection{Background}
+The nine puzzle is a $3 \times 3$ board with eight tiles also called cells, and the ninth one is blank space. The blank space is always in the lower right corner of the puzzle. The objective of the nine puzzle is to slide the tiles/cells into the space to make a picture complete or arrange the tiles in numerical order. The nine puzzle is the only puzzle that can be completely solved. If we look at the nine puzzle, there are 9! permutations that the board can be solved\cite{reinefeld1993complete}. There are $9!/2 = 181 440$ possible ways to solve the nine puzzle. The problem requires an average of 22 moves to complete the puzzle \cite{reinefeld1993complete}.  The nine puzzle cannot be solved if the numbers one to seven is arranged in order from left to right, top to bottom with the seventh and eight number that has been switched. 
+We want to optimize the moves so that the puzzle can be solved in the fewest moves. The $n$ puzzle is considered an NP-Hard problem when the minimum amount of moves need to be answered.
 \section{Literature Study}
-\subsection{Background and History}
-The objective of the 9-puzzle is to move the tiles in the given 3 X 3 board to make a picture complete or to give the solution (Reinefeld).  The nine puzzle is the only puzzle that can be completely solved.  If we look at the nine puzzle there are 9! permutations that the board can be solved(Reinefeld).  There are 9!/2 = 181 440 possible ways to solve the nine puzzle. 
+\subsection{History}
+Sam Loyd, the impish puzzle maker, introduced the 15-puzzle to the United States, Britain, and Europe in the 1870's.\cite{archer1999modern}.  The original fifteen puzzle had numbers from 1 - 15 on the tiles.  If one would have bought the 15 puzzle back then the numbers from 1 to 13 was arranged in the right order from left to right, top to bottom with the blank space in the lower right corner, and the 14 and 15 have been reversed. Loyd drove the world crazy with the puzzle, and he offered \$1 000 to the first person that could solve the problem. The 15 puzzle was impossible to solve if the numbers 14 and 15 has been switched. The 15 puzzle cannot be solved with the blank space in the lower right corner.  It is only possible to address the problem if there are an even number of moves, so the resulting permutation is even \cite{archer1999modern}.
+\\
+\\The puzzle then becomes in many sizes.  Like the nine puzzle that is the smallest and there exists a 24 puzzle as well.
 \section{User Guide}
 \subsection{How to make a .csv file}
-Step 1:
-\\Open the file named "waarde\_puzzle.csv" in Notepad$++$ or Notepad.
-Remember that the file must have "," in between the numbers and there must only be 8 numbers and a lowercase b where the blank space in the puzzle must be (Figure~\ref{csv}).
-Figure~\ref{waardes} is an example of what the .csv file looks in notepad$++$ or Notepad. The first row is the puzzle that is presented to the player and the second row is the solved puzzle.  If the player has saved its puzzle to continue later there will be a third row in the .csv file that shows the moves that the player has made already.
+Open the file named "waarde\_puzzle.csv" in your favorite text editor e.g. Notepad$++$, Notepad, Vim, Nano.
+If you want to change the order of the numbers, just remember that there must only be a "," the numbers in between the numbers. The numbers that are used is 1 to 8 and a lowercase "b" that will represent the blank space Figure~\ref{csv}.
+\\
+\\Figure~\ref{waardes} is an example of what the .csv file looks like in Notepad$++$ or Notepad. \\The first row in the file is the initial puzzle that the player must solve according to the solved puzzle. The second row in the file is the solved puzzle. If the player has saved the puzzle to continue at a later stage, then there will be a third row in the .csv file that shows the moves that the player has made already.
 \begin{figure}
 \centering
 \includegraphics[scale=0.7]{./Prente/csv.png}
@@ -54,78 +57,90 @@ Figure~\ref{waardes} is an example of what the .csv file looks in notepad$++$ or
 \begin{figure}
 \centering
 \includegraphics[scale=1]{./Prente/waardes.png}
-\caption{How the data looks in the .csv file.  This data will be used in the nine puzzle.}
+\caption{How the data looks in the .csv file. This data will be used in the nine puzzle.}
 \label{waardes}
 \end{figure}
+\FloatBarrier
 \subsection{How to begin the Nine-puzzle}
 Step 1:
-\\If you have your own .csv file - right click on the execute.bat file and open it with notepad.
-Change the filename of the .csv file.  Save the file and exit it.  Double-click on the execute.bat file to run the program. Figure~\ref{csv}
+\\If you have your own .csv file - right click on the execute.bat file and open it in Notepad$++$ or Notepad Figure~\ref{csv}.
+Change the file name of the .csv file to your own .csv file's name. Save the execute.bat file and exit it.
+\\Double-click on the execute.bat file to run the program Figure~\ref{begincmd}. 
+\\
 \\Step 2:
-\begin{figure*}[b!]
+\begin{figure*}
+  \centering
+  \begin{subfigure}{0.5\textwidth}
     \centering
-    \begin{subfigure}[b]{0.5\textwidth}
-        \centering
-        \includegraphics[scale=0.8]{./Prente/begincmd.png}
-        \caption{If you have run the execute.bat file this lines will show in the CMD }
-        \label{begincmd}
-    \end{subfigure}%
- 
-    \begin{subfigure}[b]{0.5\textwidth}
-        \centering
-        \includegraphics[scale=0.8]{./Prente/MessageBegin.png}
-        \caption{The program will show this message directly after you have run the execute.bat file}
-        \label{MessageBegin}
-    \end{subfigure}
-    \caption{\label{1}}
-   \end{figure*}
-\\If the program has run you will see Figure~\ref{1}
+    \includegraphics[scale=0.8]{./Prente/begincmd.png}
+    \caption{If you have run the execute.bat file this lines will show in the CMD }
+    \label{begincmd}
+  \end{subfigure}%
+~ 
+  \begin{subfigure}{0.5\textwidth}
+    \centering
+    \includegraphics[scale=0.8]{./Prente/MessageBegin.png}
+    \caption{The how to play message after you have run the execute.bat file}
+    \label{MessageBegin}
+  \end{subfigure}
+  \caption{The beginning of the program\label{1}}
+  \end{figure*}
+\\If the program has run correctly then you will get a message telling you how to play the nine puzzle. Figure~\ref{MessageBegin} shows the message dialog to inform the player on the rules of the nine-puzzle game.
+\\
 \\Step 3: 
-\\Enter a "y" for you are a new player or "n" for you are not a new player Figure~\ref{prent1}
+\\Enter a "y" for you are a new player or "n" for you are not a new player. Figure~\ref{prent1} shows how the program asks if you are a new player of not.
 \begin{figure}
 \centering
  \includegraphics[scale=0.8]{./Prente/prent1.png}
-  \caption{You will be asked if you are a new player or not}
-  \label{prent1}
+ \caption{New player or not}
+ \label{prent1}
 \end{figure}
+\\
 \\Step 4:
 \begin{figure}
 \centering
  \includegraphics[scale=0.8]{./Prente/prent2.png}
- \caption{After specifying that you are a new player or not the program will give the begin puzzle}
+ \caption{The begin puzzle is given to the player}
  \label{prent2}
 \end{figure}
-\\After step 3 is completed the begin puzzle will be given. Figure~\ref{prent2}
+\\After Step 3 has been completed the begin puzzle will be given to the player. Figure~\ref{prent2} shows Step 4.
+\\
 \\Step 5:
 \begin{figure}
 \centering
  \includegraphics[scale=0.8]{./Prente/prent3.png}
- \caption{After a move is made}
+ \caption{After a number has been moved to the empty space}
  \label{prent3}
 \end{figure}
-\\Enter the number that you want to move like in Figure~\ref{prent3}. The game will move that number to the blank space(b) and give the updated puzzle again.
+\\Enter the number that you want to move to the empty space called "b". Figure~\ref{prent3} shows how the number has been moved to the empty space "b" and gives then the updated puzzle.
 \subsection{Functionality}
-How to stop, save and exit the program:
-\\If you want to stop playing and play again later then you can type "0" then the puzzle will be saved and the game will exit Figure~\ref{2}.
-\begin{figure*}[b!]
+Stop, save and exit of the program:
+\\ Figure~\ref{prent4} shows that the player has type in "0" to save their puzzle to continue at a later stage.
+Figure~\ref{prent5} show the message that the program will give to the player is the puzzle have been saved to the .csv file.  After the player has pressed "OK" the program will exit.
+\\
+\\If the game has been won:
+\\Figure~\ref{prent6} will show if the player has won the game by solving the puzzle according to the final puzzle specifying in the .csv file.
+\\
+\\How to see the goal puzzle that one must obtain from the initial puzzle.
+\\Figure~\ref{prent7} shows that the player has entered "99" to see what the goal puzzle must look like.  The program will write "Goal Puzzle" and directly after the goal puzzle have been given the program will give the puzzle that the player must use to obtain the goal puzzle.
+\begin{figure*}
+  \centering
+  \begin{subfigure}{0.5\textwidth}
     \centering
-    \begin{subfigure}[b]{0.5\textwidth}
-        \centering
-        \includegraphics[scale=0.8]{./Prente/prent4.png}
-        \caption{If you type in 0}
-        \label{prent4}
-    \end{subfigure}%
- 
-    \begin{subfigure}[b]{0.5\textwidth}
-        \centering
-        \includegraphics[scale=0.8]{./Prente/prent5.png}
-        \caption{The message will show that your puzzle has been saved}
-        \label{prent5}
-    \end{subfigure}
-    \caption{\label{2}}
-   \end{figure*}
-   
-If you have won the game, the program will save your work and show a message to congratulate you and show how many moves you have made to solve the puzzle Figure~\ref{prent6}.
+    \includegraphics[scale=0.8]{./Prente/prent4.png}
+    \caption{If you type in 0}
+    \label{prent4}
+  \end{subfigure}%
+ ~
+  \begin{subfigure}{0.5\textwidth}
+    \centering
+    \includegraphics[scale=0.8]{./Prente/prent5.png}
+    \caption{Message dialog when the player saves}
+    \label{prent5}
+  \end{subfigure}
+  \caption{\label{2}}
+  \end{figure*}
+  
 \begin{figure}
 \centering
 \includegraphics[scale=0.8]{./Prente/prent6.png}
@@ -133,21 +148,18 @@ If you have won the game, the program will save your work and show a message to 
 \label{prent6}
 \end{figure}
 
-If you want to view the finale puzzle you type in 99 Figure~\ref{prent7}.
 \begin{figure}
 \centering
 \includegraphics[scale=0.8]{./Prente/prent7.png}
-\caption{Solved puzzle is shown in the program}
+\caption{Goal puzzle is given in the program}
 \label{prent7}
 \end{figure}
 
 \section{Code}
- \begin{tiny}
+ \begin{scriptsize}
  \lstinputlisting[language=java, firstline=1, lastline=222]{./NinePuzzle.java}
-   \end{tiny}
-   \section{Bibliography}
-   Reinefeld, A.Complete Solution of the Eight-Puzzle and the Bene t of Node Ordering in IDA*.
-   \url{http://www.laborion.com/Portals/0/Ai/Heuristicssearch/93ijcai.pdf} Date of access: 8 Maart 2016.
+ \end{scriptsize}
+
 \bibliographystyle{dcu} 
-\bibliography{harvard}%where the bib file must be read
+\bibliography{ref}%where the bib file must be read
 \end{document}

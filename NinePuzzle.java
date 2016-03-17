@@ -51,7 +51,7 @@ public class NinePuzzle {
       // test if the input from user is 0 or any other number between 1 - 8
       if ( lees != 0 ) {
         if(lees == 99) {
-          System.out.println("Solved Puzzle");
+          System.out.println("Goal Puzzle");
           puzzle(finaal);
           System.out.println("");
           } else {
