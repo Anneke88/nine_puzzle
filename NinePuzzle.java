@@ -20,16 +20,19 @@ public class NinePuzzle {
     int[] finaal = new int[9];
 	int[] userPuzzle = new int[9];
      // array for the string read in csv file
-    String[] userInputs = new String[1];
+    //String[] userInputs = new String[1];
     String filename = input.nextLine();
     // call method that reads the csv file
-    setUpArray(current, finaal, userInputs, filename);  
+    setUpArray(current, finaal,userPuzzle, filename);  
 	
 	//copy current[] to userPuzzle[]
-    for (int f = 0; f > 9;f++){
+    /*for (int f = 0; f > 9;f++){
       userPuzzle[f] = current[f];
 	  f++;
-	}
+	}*/
+	
+
+//puzzle(userPuzzle));
     // display how the game is played
     String message = "How to play: \n" +
 	                 "Type in the number that you want to \n" +
@@ -67,12 +70,13 @@ public class NinePuzzle {
               count++;
               solved = compare_solution(finaal, userPuzzle);
              // userInputs[0] += Integer.toString(lees) + ",";
+			 //userPuzzle[0] += Integer.toString(userPuzzle);
 		      writeArrayToFile(current,finaal,userPuzzle,filename);
 		    }
           }  
       } else { //if the user enters 0
         //write current puzzle to csv file
-        writeArrayToFile(current, finaal, userInputs[0], filename);
+        writeArrayToFile(current, finaal, userPuzzle, filename);
         //stoor na txt file as begin waardes
         save = true;
       }//end if
@@ -80,7 +84,7 @@ public class NinePuzzle {
     }// end while  
     // show message that say he has solved  the puzzle
     if ( solved ) {
-		count = count-1;
+		count = count-3;
       String message1 ="Congradulations you have solved the puzzle in" +" "+count +" "+ "moves";
       JOptionPane.showMessageDialog(null, message1);
     }
@@ -92,7 +96,7 @@ public class NinePuzzle {
   
   public static void writeArrayToFile(int [] current,
                                        int [] finaal,
-                                    String userinputs,
+                                    int [] userPuzzle,
                                     String filename) 
                   throws FileNotFoundException {
     try {
@@ -131,10 +135,10 @@ public class NinePuzzle {
         outputStream.print(userPuzzle[a] + "\r\n");
       }//end else
 	}
-    if (userinputs.length() > 0) {
+    /*if (userinputs.length() > 0) {
       String user_inputs = userinputs.substring(0, userinputs.length() - 1) + "\r\n";
       outputStream.println(user_inputs);
-    }
+    }*/
     outputStream.close();
     } catch (FileNotFoundException e) {
         e.printStackTrace();
@@ -167,22 +171,21 @@ public class NinePuzzle {
                        finaal[w] = Integer.parseInt(values[w]);
                    }
                  } 
-        } //else if ( lines_read == 2 ) {
+          } //else if ( lines_read == 2 ) {
 			//for (String line = in.readLine(); line != null; line = in.readLine())
 				     
-              while (lines_read != null) {
+              while (inputStream.hasNext() != null) { //tel al die lyne in die file. en trek dan 2 af vir count
               count++;
               line = fileReader.nextLine();
-              }
-			  
-			}
-      lines_read++;  
+			  //lines_read++;
+              }		  	      
+      } 
     }
       inputStream.close();
-    }
     catch(FileNotFoundException e) {
       e.printStackTrace();
     }      
+	System.arraycopy( current, 0, userPuzzle, 0, current.length );
   }//end setuparray
   //print puzzle
   public static int puzzle(int [] current) {
