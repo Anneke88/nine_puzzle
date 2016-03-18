@@ -18,11 +18,18 @@ public class NinePuzzle {
     // create arrays
     int[] current = new int[9];
     int[] finaal = new int[9];
-    // array for the string read in csv file
+	int[] userPuzzle = new int[9];
+     // array for the string read in csv file
     String[] userInputs = new String[1];
     String filename = input.nextLine();
     // call method that reads the csv file
     setUpArray(current, finaal, userInputs, filename);  
+	
+	//copy current[] to userPuzzle[]
+    for (int f = 0; f > 9;f++){
+      userPuzzle[f] = current[f];
+	  f++;
+	}
     // display how the game is played
     String message = "How to play: \n" +
 	                 "Type in the number that you want to \n" +
@@ -37,13 +44,13 @@ public class NinePuzzle {
 	String newUser = gebruiker.nextLine();
 	String yn = newUser.substring(0, 1);
 	if (yn.equals("y") ||  yn.equals("Y")) {
-	  userInputs[0] = "";
-      writeArrayToFile(current, finaal, userInputs[0], filename);
+	 // userInputs[0] = "";
+      writeArrayToFile(current, finaal,userPuzzle, filename);
 	}
-	count = userInputs.length;
+	//count = userInputs.length;
     while ( !solved && !save) {
       System.out.println("Current Puzzle");
-      puzzle(current); // print current puzzle
+      puzzle(userPuzzle); // print current puzzle
       int lees = 0;
       // ask user what his next move is going to be
       System.out.println("What is your next move?");
@@ -56,11 +63,11 @@ public class NinePuzzle {
           System.out.println("");
           } else {
           // move the index of the tiles
-            if (move_index(lees, current)) {
+            if (move_index(lees, userPuzzle)) {
               count++;
-              solved = compare_solution(finaal, current);
-              userInputs[0] += Integer.toString(lees) + ",";
-		      writeArrayToFile(current,finaal,userInputs[0],filename);
+              solved = compare_solution(finaal, userPuzzle);
+             // userInputs[0] += Integer.toString(lees) + ",";
+		      writeArrayToFile(current,finaal,userPuzzle,filename);
 		    }
           }  
       } else { //if the user enters 0
@@ -112,7 +119,18 @@ public class NinePuzzle {
       } else {
         outputStream.print(finaal[h] + "\r\n");
       }//end else
-    }    
+    }
+    for(int a = 0; a < 9;a++){
+		if (a != 8) {
+        if (userPuzzle[a] == 0) {
+          outputStream.print("b,"); 
+        } else {
+            outputStream.print(userPuzzle[a] + ",");
+        }
+      } else {
+        outputStream.print(userPuzzle[a] + "\r\n");
+      }//end else
+	}
     if (userinputs.length() > 0) {
       String user_inputs = userinputs.substring(0, userinputs.length() - 1) + "\r\n";
       outputStream.println(user_inputs);
@@ -124,8 +142,8 @@ public class NinePuzzle {
   }
   //read csv file into an array
   public static void setUpArray(int [] current, int [] finaal, 
-                                String [] userinputs, String filename) 
-								throws FileNotFoundException {
+                               String filename) 
+							   throws FileNotFoundException {
     File File = new File(filename);  
     try {
       Scanner inputStream = new Scanner(File);
@@ -133,7 +151,7 @@ public class NinePuzzle {
       while (inputStream.hasNext() ) {
         String data = inputStream.next();//gets a whole line
         String [] values = data.split(",");
-        if ( lines_read == 0 ) {
+        if ( lines_read == 0 ) { //begin puzzle
           for ( int v = 0; v < 9; v++ ) {
             if (values[v].equals("b")) {
               current[v] = 0;
@@ -141,7 +159,7 @@ public class NinePuzzle {
               current[v] = Integer.parseInt(values[v]); 
             }
           }
-        } else if ( lines_read == 1 ) {
+        } else if ( lines_read == 1 ) { //eind puzzle
                  for ( int w = 0; w < 9; w++ ) {
                    if (values[w].equals("b")) {
                      finaal[w] = 0;
@@ -149,13 +167,15 @@ public class NinePuzzle {
                        finaal[w] = Integer.parseInt(values[w]);
                    }
                  } 
-        } else if ( lines_read == 2 ) {
-		         if (!data.equals(null) || !data.equals("")) {
-                   userinputs[0] = data + ",";
-		         } else {
-		             userinputs[0] = "";
-		         }
-        }
+        } //else if ( lines_read == 2 ) {
+			//for (String line = in.readLine(); line != null; line = in.readLine())
+				     
+              while (lines_read != null) {
+              count++;
+              line = fileReader.nextLine();
+              }
+			  
+			}
       lines_read++;  
     }
       inputStream.close();
@@ -168,7 +188,7 @@ public class NinePuzzle {
   public static int puzzle(int [] current) {
     for(int k = 0; k < 9; k++) {   
       if (current[k] == 0) {
-        System.out.print("b ");
+        System.out.print("b");
       } else {
           System.out.print(current[k] +" ");  
       }
@@ -211,9 +231,9 @@ public class NinePuzzle {
   return 0;
   }
   //compare wether the current puzzle has the same values of the final puzzle
-  public static boolean compare_solution(int [] finaal, int [] current) {
+  public static boolean compare_solution(int [] finaal, int [] userPuzzle) {
     for ( int i = 0; i < 9; i++) {
-      if ( finaal[i] != current[i] ) {
+      if ( finaal[i] != userPuzzle[i] ) {
         return false;
       }
     }
