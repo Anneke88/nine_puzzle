@@ -33,6 +33,7 @@
 \tableofcontents
 \pagebreak
 \section{Introduction}
+The problem is that people want to play the nine puzzle on the computer.  The ABC gaming company has asked me to write a nine puzzle game for them.  I have chosen tho do it in java.  Java is a programming language that every one is familiar with.  The nine puzzle program will be text input based.  The user will enter from the keyboard the number that the player want to move.  ABC company asked me to write the program in a manner that the player could save their puzzle to continue at a later stage.  The program must also show the player the goal puzzle if they wish to see the goal puzzle.  The company want to save all the moves that the player has made so that the player can enter competitions by just sending the .csv file.  The players objective is to solve the puzzle in the fewest moves. 
 \subsection{Background}
 The nine puzzle is a $3 \times 3$ board with eight tiles also called cells, and the ninth one is blank space. The blank space is always in the lower right corner of the puzzle. The objective of the nine puzzle is to slide the tiles/cells into the space to make a picture complete or arrange the tiles in numerical order. The nine puzzle is the only puzzle that can be completely solved. If we look at the nine puzzle, there are 9! permutations that the board can be solved\cite{reinefeld1993complete}. There are $9!/2 = 181 440$ possible ways to solve the nine puzzle. The problem requires an average of 22 moves to complete the puzzle \cite{reinefeld1993complete}.  The nine puzzle cannot be solved if the numbers one to seven is arranged in order from left to right, top to bottom with the seventh and eight number that has been switched. 
 We want to optimize the moves so that the puzzle can be solved in the fewest moves. The $n$ puzzle is considered an NP-Hard problem when the minimum amount of moves need to be answered.
@@ -46,7 +47,7 @@ Sam Loyd, the impish puzzle maker, introduced the 15-puzzle to the United States
 Open the file named "waarde\_puzzle.csv" in your favorite text editor e.g. Notepad$++$, Notepad, Vim, Nano.
 If you want to change the order of the numbers, just remember that there must only be a "," the numbers in between the numbers. The numbers that are used is 1 to 8 and a lowercase "b" that will represent the blank space Figure~\ref{csv}.
 \\
-\\Figure~\ref{waardes} is an example of what the .csv file looks like in Notepad$++$ or Notepad. \\The first row in the file is the initial puzzle that the player must solve according to the solved puzzle. The second row in the file is the solved puzzle. If the player has saved the puzzle to continue at a later stage, then there will be a third row in the .csv file that shows the moves that the player has made already.
+\\Figure~\ref{waardes} is an example of what the .csv file looks like in Notepad$++$ or Notepad. \\The first row in the file is the initial puzzle that the player must solve according to the solved puzzle. The second row in the file is the solved puzzle. After every move that the player has made the puzzle is saved from line three in the .csv file.  
 \begin{figure}
 \centering
 \includegraphics[scale=0.7]{./Prente/csv.png}
@@ -149,7 +150,7 @@ Figure~\ref{prent5} show the message that the program will give to the player is
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.8]{./Prente/prent7.png}
+\includegraphics[scale=0.6]{./Prente/prent7.png}
 \caption{Goal puzzle is given in the program}
 \label{prent7}
 \end{figure}
