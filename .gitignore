@@ -30,3 +30,7 @@
 
 # Debug files
 *.dSYM/
+#java
+*.class
+#LaTeX
+build/
